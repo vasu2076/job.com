@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <title>Job.com</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+.navbar .brand {
+  font-size: 24px;
+}
+.navbar .links {
+  display: flex;
+}
+.container {
+    max-width: 800px;
+    justify-content: space-between;
+    margin: 100px auto 50px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  .cart-item {
+    border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  .cart-item h2 {
+    margin: 0;
+    color: #555;
+  }
+  .cart-item p {
+    margin: 5px 0;
+    color: #777;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .button:hover {
+    background-color: #555;
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand"><a href="#">Job.com</a></div>
+    <div class="links">
+      <a href="/index">Home</a>
+      <a href="/Apply">Apply</a>
+      <a href="/jobs">Jobs</a>
+      <a href="/submit-job">Add The Job</a>
+      <a href="/contact-us">Contact-us</a>
+     
+    </div>
+  </nav>
+
+  <div style="padding: 20px;">
+    <h1>Here are all the you apply job:</h1>
+   <div class="container">
+      <% applied.forEach(function(Job) {%>
+          <div class="cart-item">
+            <h2>Job Title: <%= Job.jobname %></h2>
+            <p><strong>Company:</strong> <%= Job.companyname %></p>
+            <p><strong>Description:</strong> <%= Job.jobdescription %></p>
+            <p><strong>Location:</strong> <%= Job.location %></p>
+            <p><strong>Job Type:</strong> <%= Job.jobtype %></p>
+            <p><strong>Salary:</strong> <%= Job.salary %><b> / year</b></p>
+            <p><strong>Contact Email:</strong> <%= Job.contactemail %></p>
+            <p><strong>Position:</strong> <%= Job.position %></p>
+            <!-- <a class="button" href="/apply/<%= Job.id %>">apply</a> -->
+            <!-- <a class="button" href="/apply">apply</a>
+            <input type="hidden" name="id" value="<%= Job.id %>"> -->
+            <form action="/apply/delete/<%= Job.id %>" method="post">
+              <button class="button" type="submit">Remove from apply</button>
+            </form>
+          </div>
+      <% }); %>
+  </div>
+  </div>
+</body>
+</html>

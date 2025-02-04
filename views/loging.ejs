@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Login</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* border: 5px solid #ccc;
+    border-radius: 3px; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.from-container{
+    width: 300px;
+    margin:  0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.from-group{
+    margin-bottom: 15px;
+}
+.from-group label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.from-group input{
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.submit-btn{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color:  #333;
+    color: white;
+    border: none;
+    border: 5px;
+    cursor: pointer;
+}
+.submit-btn:hover{
+    background-color: #333;
+
+}
+p{
+    margin-top: 15px;
+}
+    </style>
+</head>
+<body>
+    <div class="from-container">
+        <h2> Login </h2>
+        <form action="/" method="post">
+            <div class="from-group">
+                <label for="name">
+                    name:
+                </label>
+                <input type="text" id="name" name="name" placeholder="enter your name" required>
+            </div>
+            <div class="from-group">
+                <label for="password">
+                    password:
+                </label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+            <!-- <a href="/index" class="submit-btn">Login</a> -->
+        </form>
+        <p>Don't have an account?<a href="/singup">singup</a></p>
+    </div>
+</body>
+</html>

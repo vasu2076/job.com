@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <title>Job.com - Add Job Information</title>
+ <link rel="stylesheet" href="./addjob.css">
+ <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  .navbar .brand {
+    font-size: 24px;
+  }
+  .navbar .links {
+    display: flex;
+  }
+  /* Form Container Styles */
+  .container {
+    max-width: 600px;
+    margin: 80px auto 50px; /* Adjusted for navbar */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+  }
+  input, textarea, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  button:hover {
+    background-color: #555;
+  }
+ </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand"><a href="#">Job.com</a></div>
+    <div class="links">
+      <a href="/index">Home</a>
+      <a href="/Apply">Apply</a>
+      <a href="/jobs">Jobs</a>
+      <a href="/submit-job">Add The Job</a>
+      <a href="/contact-us">Contact-us</a>
+     
+    </div>
+  </nav>
+
+  <!-- Form Container -->
+  <div class="container" id="add-job">
+    <h1>Add Job Information</h1>
+    <form action="/submit-job" method="POST">
+      <label for="job-title">Job Title:</label>
+      <input type="text" id="job-title" name="jobname" placeholder="Enter job title" required>
+
+      <label for="company-name">Company Name:</label>
+      <input type="text" id="company-name" name="companyname" placeholder="Enter company name" required>
+
+      <label for="job-description">Job Description:</label>
+      <textarea id="job-description" name="jobdescription" placeholder="Write a brief description" rows="5" required></textarea>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" placeholder="Enter job location" required>
+
+      <label for="job-type">Job Type:</label>
+      <select id="job-type" name="jobtype" required>
+        <option value="">Select Job Type</option>
+        <option value="full-time">Full-time</option>
+        <option value="part-time">Part-time</option>
+        <option value="internship">Internship</option>
+        <option value="freelance">Freelance</option>
+      </select>
+
+      <label for="salary">Salary:</label>
+      <input type="text" id="salary" name="salary" placeholder="Enter salary (e.g., 50000/year)" required>
+
+      <label for="contact-email">Contact Email:</label>
+      <input type="email" id="contact-email" name="contactemail" placeholder="Enter contact email" required>
+
+      <label for="position">Position:</label>
+      <input type="text" id="position" name="position" placeholder="Enter position (e.g., Developer, Designer)" required>
+
+      <button type="submit">Submit Job</button>
+    </form>
+  </div>
+</body>
+</html>
